@@ -38,6 +38,7 @@ function CreateOrder() {
 
   const formErrors = useActionData();
 
+
   // const [withPriority, setWithPriority] = useState(false);
   const cart = fakeCart;
 
@@ -59,6 +60,7 @@ function CreateOrder() {
           <div>
             <input type="tel" name="phone" required />
           </div>
+          {formErrors?.phone && <p>{ formErrors.phone }</p>}
         </div>
 
         <div>
@@ -96,7 +98,7 @@ export async function action({request}) {
   const order = {...data, cart: JSON.parse(data.cart), priority: data.priority === "on"}
   
 const errors = {}
-if(!isValidPhone(order.phone)) errors.phone = "Please type in your correct phone number"
+if(!isValidPhone(order.phone)) errors.phone = "Please type in your correct phone number."
 
 if (Object.keys(errors).length > 0 ) return errors
   
