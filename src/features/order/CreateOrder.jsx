@@ -96,7 +96,7 @@ export async function action({request}) {
   const data = Object.fromEntries(formData)
 
   const order = {...data, cart: JSON.parse(data.cart), priority: data.priority === "on"}
-  
+      
 const errors = {}
 if(!isValidPhone(order.phone)) errors.phone = "Please type in your correct phone number."
 
