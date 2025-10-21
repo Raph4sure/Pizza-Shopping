@@ -9,7 +9,7 @@ import Error from "./ui/Error";
 import { action as updateOrderAction } from "./features/order/UpdateOrder";
 
 const router = createBrowserRouter([
-    {
+    { 
         element: <AppLayout />,
         errorElement: <Error />,
         children: [
@@ -48,3 +48,5 @@ function App() {
 }
 
 export default App;
+
+
